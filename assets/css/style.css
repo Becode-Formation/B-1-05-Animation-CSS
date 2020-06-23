@@ -1,0 +1,48 @@
+body {
+  font-family: sans-serif;
+}
+
+h2 {
+  color: #96101b;
+}
+
+.card {
+  position: relative;
+  background: no-repeat url(/assets/img/ryu.jpg);
+  background-size: 650px;
+  background-position: bottom left 45%;
+  width: 400px;
+  height: 500px;
+  margin: 5% auto;
+}
+
+.card__date {
+  background: #96101b;
+  color: #fff;
+  position: absolute;
+  right: 4%;
+  top: 3%;
+  width: 4em;
+  height: 4em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+}
+
+.card__descirption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=style.css.map */

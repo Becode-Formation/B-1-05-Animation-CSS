@@ -1,0 +1,30 @@
+@import 'colors';
+@import 'bases';
+
+.card {
+    position: relative;
+    background:  no-repeat url(/assets/img/ryu.jpg) ;
+    background-size: 650px;
+    background-position: bottom left 45%;
+    width: 400px;
+    height: 500px;
+    margin: 5% auto;
+
+    &__date{
+        background: $colorOne;
+        color: $colorThree;
+        position: absolute;
+        right: 4%;
+        top: 3%;
+        width: 4em;
+        height: 4em;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+    }
+    &__descirption {
+        display: flex;
+    }
+}
