@@ -87,7 +87,7 @@ h2 {
 }
 .card__text p {
   padding-top: 1.5vh;
-  transition: opacity 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: opacity 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   opacity: 0;
 }
 .card__infos {
@@ -109,7 +109,8 @@ h2 {
   color: #a5a5a5;
 }
 .card__bg {
-  background: no-repeat url(/assets/img/ryu.jpg);
+  background-image: url("/assets/img/ryu.jpg");
+  background-repeat: no-repeat;
   background-size: 650px;
   background-position: bottom left 45%;
   width: 400px;
