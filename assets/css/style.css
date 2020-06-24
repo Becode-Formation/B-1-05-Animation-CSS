@@ -109,7 +109,7 @@ h2 {
   color: #a5a5a5;
 }
 .card__bg {
-  background: no-repeat url(/assets/img/ryu.jpg);
+  background: no-repeat url(assets/img/ryu.jpg);
   background-size: 650px;
   background-position: bottom left 45%;
   width: 400px;
