@@ -46,6 +46,11 @@
         flex-direction: column;
         justify-content: center;
         border-radius: 50%;
+        transition: .4s ease-in;
+
+        &:hover  {
+        transform: scale(1.3);
+        }
     }
 
     &__description { /* Description en bas */
@@ -59,7 +64,7 @@
         padding: 1vh 1.3vw;
         padding-bottom: 5vh;
         text-align: justify;
-        transition: .6s;
+        transition: .4s cubic-bezier(.22,.61,.36,1);
 
         &::before {
             @extend %sharedAbsol;
@@ -87,6 +92,7 @@
         p {
             @extend %sharedColor;
             padding-top: 1.5vh;
+            transition: opacity .3s cubic-bezier(.22,.61,.36,1);
             opacity: 0;
         }
     }
@@ -97,6 +103,7 @@
         position: absolute;
         bottom: 0;
         left: 1.4vw;
+        width: inherit;
         font-size: 0.9em;
         font-weight: 500;
         ul {
@@ -118,7 +125,7 @@
         background-position: bottom left 45%;
         width: 400px;
         height: 500px;
-        transition: .4s ease-out;
+        transition: .6s cubic-bezier(.22,.61,.36,1);
     }
 
     &:hover {
@@ -132,9 +139,9 @@
 
     &:hover &__description {
         height: 30vh;
-        p{
-            opacity: 1;
-        }
     }
 
+    &:hover &__text p {
+         opacity: 1;
+    }
 }
