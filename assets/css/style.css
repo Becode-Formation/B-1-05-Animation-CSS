@@ -1,11 +1,33 @@
+@charset "UTF-8";
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h2 {
   color: #96101b;
 }
 
+.card__infos ul, .card__description {
+  display: flex;
+}
+
+.card__description::before, .card__description, .card__date {
+  position: absolute;
+}
+
+.card__text p, .card__text h2 {
+  font-weight: 400;
+}
+
+.card__date {
+  text-align: center;
+}
+
+.card__infos, .card__text p {
+  color: #7c7c7c;
+}
+
+/* Ensemble de la carte */
 .card {
   position: relative;
   background: no-repeat url(/assets/img/ryu.jpg);
@@ -14,35 +36,63 @@ h2 {
   width: 400px;
   height: 500px;
   margin: 5% auto;
+  box-shadow: 0vw 0.2vh 0.3vw -0.2vh rgba(0, 0, 0, 0.493);
 }
-
 .card__date {
+  /* Date en haut à droite */
   background: #96101b;
   color: #fff;
-  position: absolute;
   right: 4%;
   top: 3%;
-  width: 4em;
-  height: 4em;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
+  width: 3em;
+  height: 3em;
+  padding: 0.3vw;
+  word-wrap: break-word;
   display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50%;
+}
+.card__description {
+  /* Description en bas */
+  bottom: 0;
+  background: #fff;
+  flex-direction: column;
+  align-content: flex-end;
+  padding: 1vh 1.3vw;
+  text-align: justify;
+}
+.card__description::before {
+  font-weight: 500;
+  content: "Photo";
+  top: -3vh;
+  left: 0vw;
+  background: #96101b;
+  padding: 0.3vw 2vh;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.card__text {
+  line-height: 1.5em;
+}
+.card__text h1 {
+  font-weight: 600;
+}
+.card__text p {
+  padding-top: 1.5vh;
+}
+.card__infos {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.card__infos ul {
+  margin: 2vh 0;
+  padding: 0;
+}
+.card__infos ul li {
+  list-style: none;
+  padding-right: 2vw;
+  color: #a5a5a5;
 }
 
-.card__descirption {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
 /*# sourceMappingURL=style.css.map */

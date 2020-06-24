@@ -1,30 +1,109 @@
-@import 'colors';
-@import 'bases';
+@import 'colors'; // Import du fichier de couleurs
+@import 'bases'; // Import des modifications de bases (body, ..)
 
+%sharedFlex {
+    display: flex;
+}
+
+%sharedAbsol {
+    position: absolute;
+}
+
+%sharedWeight {
+    font-weight: 400;
+}
+
+%sharedTextC {
+    text-align: center;
+}
+
+%sharedColor {
+    color: $textColor;
+}
+
+/* Ensemble de la carte */
 .card {
     position: relative;
-    background:  no-repeat url(/assets/img/ryu.jpg) ;
+    background: no-repeat url(/assets/img/ryu.jpg);
     background-size: 650px;
     background-position: bottom left 45%;
     width: 400px;
     height: 500px;
     margin: 5% auto;
+    box-shadow: 0vw 0.2vh 0.3vw -0.2vh rgba(0, 0, 0, 0.493);
 
-    &__date{
+    &__date{ /* Date en haut à droite */
+        @extend %sharedAbsol;
+        @extend %sharedTextC;
         background: $colorOne;
         color: $colorThree;
-        position: absolute;
         right: 4%;
         top: 3%;
-        width: 4em;
-        height: 4em;
+        width: 3em;
+        height: 3em;
+        padding: 0.3vw;
+        word-wrap: break-word;
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        border-radius: 50px;
+        border-radius: 50%;
     }
-    &__descirption {
-        display: flex;
+
+    &__description { /* Description en bas */
+        @extend %sharedAbsol;
+        @extend %sharedFlex;
+        bottom: 0;
+        background: $colorThree;
+        flex-direction: column;
+        align-content: flex-end;
+        padding: 1vh 1.3vw;
+        text-align: justify;
+
+        &::before {
+            @extend %sharedAbsol;
+            font-weight: 500;
+            content: 'Photo';
+            top: -3vh;
+            left: 0vw;
+            background: $colorOne;
+            padding: 0.3vw 2vh;
+            font-size: 1.2rem;
+            color: $colorThree;
+        }
     }
+
+    &__text {
+        line-height: 1.5em;
+
+        p, h2 {
+            @extend %sharedWeight;
+        }
+
+        h1 {
+            font-weight: 600;
+        }
+
+        p {
+            @extend %sharedColor;
+            padding-top: 1.5vh;
+        }
+    }
+
+    &__infos {
+        @extend %sharedColor;
+        font-size: 0.9em;
+        font-weight: 500;
+        ul {
+            @extend %sharedFlex;
+            margin: 2vh 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                padding-right: 2vw;
+                color: rgb(165, 165, 165);
+             }
+        }
+    }
+
 }
