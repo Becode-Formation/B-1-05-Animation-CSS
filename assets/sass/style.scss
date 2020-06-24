@@ -24,13 +24,12 @@
 /* Ensemble de la carte */
 .card {
     position: relative;
-    background: no-repeat url(/assets/img/ryu.jpg);
-    background-size: 650px;
-    background-position: bottom left 45%;
     width: 400px;
     height: 500px;
     margin: 5% auto;
-    box-shadow: 0vw 0.2vh 0.3vw -0.2vh rgba(0, 0, 0, 0.493);
+    overflow: hidden;
+    box-shadow: 0vw 0.2vh 0.5vw -0.2vh rgba(0, 0, 0, 0.493);
+    transition: .6s;
 
     &__date{ /* Date en haut à droite */
         @extend %sharedAbsol;
@@ -43,7 +42,7 @@
         height: 3em;
         padding: 0.3vw;
         word-wrap: break-word;
-        display: inline-flex;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         border-radius: 50%;
@@ -53,11 +52,14 @@
         @extend %sharedAbsol;
         @extend %sharedFlex;
         bottom: 0;
+        height: 15vh;
         background: $colorThree;
         flex-direction: column;
         align-content: flex-end;
         padding: 1vh 1.3vw;
+        padding-bottom: 5vh;
         text-align: justify;
+        transition: .6s;
 
         &::before {
             @extend %sharedAbsol;
@@ -74,7 +76,6 @@
 
     &__text {
         line-height: 1.5em;
-
         p, h2 {
             @extend %sharedWeight;
         }
@@ -86,11 +87,16 @@
         p {
             @extend %sharedColor;
             padding-top: 1.5vh;
+            opacity: 0;
         }
     }
 
     &__infos {
+        background: #fff;
         @extend %sharedColor;
+        position: absolute;
+        bottom: 0;
+        left: 1.4vw;
         font-size: 0.9em;
         font-weight: 500;
         ul {
@@ -103,6 +109,31 @@
                 padding-right: 2vw;
                 color: rgb(165, 165, 165);
              }
+        }
+    }
+
+    &__bg {
+        background: no-repeat url(/assets/img/ryu.jpg);
+        background-size: 650px;
+        background-position: bottom left 45%;
+        width: 400px;
+        height: 500px;
+        transition: .4s ease-out;
+    }
+
+    &:hover {
+        box-shadow: 0vw 0.2vh 0.4vw 0.7vh rgba(0, 0, 0, 0.315);
+    }
+
+    &:hover &__bg{
+        transform: scale(1.2);
+        opacity: 0.6;
+    }
+
+    &:hover &__description {
+        height: 37vh;
+        p{
+            opacity: 1;
         }
     }
 
