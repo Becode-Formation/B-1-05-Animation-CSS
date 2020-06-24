@@ -118,7 +118,7 @@ h2 {
   opacity: 0.6;
 }
 .card:hover .card__description {
-  height: 37vh;
+  height: 30vh;
 }
 .card:hover .card__description p {
   opacity: 1;
